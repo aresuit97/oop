@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1610206892 source:e:\c++\quanlyqn\main.cpp
+	<iostream>
+	<ctime>
+	"qlThanhVien.h"
+
+1610132810 e:\c++\quanlyqn\menu.h
+	<iostream>
+	<iomanip>
+
+1610133847 source:e:\c++\quanlyqn\menu.cpp
+	"menu.h"
+	"qlThanhVien.h"
+
+1610205630 source:e:\c++\quanlyqn\qlthanhvien.cpp
+	"qlThanhVien.h"
+
+1610205370 e:\c++\quanlyqn\qlthanhvien.h
+	"thanhVien.h"
+
+1610206897 e:\c++\quanlyqn\thanhvien.h
+	<string>
+	<iostream>
+	<iomanip>
+	<stdlib.h>
+	<string>
+	"menu.h"
+
+1610133459 source:e:\c++\quanlyqn\qlmay.cpp
+
+1609826705 e:\c++\quanlyqn\thanhvien.cpp
+	"thanhVien.h"
+
+1610201487 e:\c++\quanlyqn\qlmay.h
+	"may.h"
+
+1610201479 e:\c++\quanlyqn\may.h
+	<ctime>
+
+1610205384 e:\c++\quanlyqn\phien.h
+	"thanhVien.h"
+	"may.h"
+	"qlMay.h"
+	"qlThanhVien.h"
+
+1610205464 source:e:\c++\quanlyqn\qlphien.cpp
+	"qlPhien.h"
+
+1610205040 e:\c++\quanlyqn\qlphien.h
+	"phienTV.h"
+	"phienNonTV.h"
+
+1610205443 e:\c++\quanlyqn\phientv.h
+	"phien.h"
+
+1610204107 e:\c++\quanlyqn\phiennontv.h
+	"phien.h"
+
