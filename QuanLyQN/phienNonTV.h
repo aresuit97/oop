@@ -2,17 +2,15 @@
 #define PHIENNONTV_H_INCLUDED
 #include "phien.h"
 
-class phienNonTV:public Phien{
+class phienNonTV:public Phien
+{
 
 
-    public:
-        int type(){return 0;};
-        PhienNonTV(){
-        timeTemp=time(0);
-        cin>>mayID;
-        cin>>thoiGian;
-        cin>>tienChoi;
-    }
+public:
+    int type();
+    PhienNonTV();
+    void tatMay();
+    void moMay();
 
 
 };

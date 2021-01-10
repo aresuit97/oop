@@ -54,16 +54,42 @@ void qlPhien::themPhien(phienNonTV p)
     }
 }
 
-//void qlPhien::update()
-//{
-//    for (int i=0; i<soLuong; i++)
-//    {
-//        if(qP[i]->trangThaiPhien())
-//        {
-//            long long temp=difftime(qP[i]->getTime(),time(0));
-//
-//        }
-//    }
-//
-//}
+void qlPhien::update()
+{
+    for (int i=0; i<soLuong; i++)
+    {
+        if(qP[i]->getMay()==nullptr)
+        {
+            qP[i]->setMay(qM.getDsMay()[qP[i]->getId()]);
+            qP[i]->getMay()->doiTrangThai();
+            if(qP[i]->type()==1)
+            {
+                for (int j=0; j<qTV.getSL(); j++)
+                {
+                    if(qP[i]->tenTV==qTV.tv[i]->getUsername())
+                    {
+                            qP[i]->tv=qTV.tv[i];
+                    }
+                }
+            }
+
+        }
+        if(qP[i]->getTrangThai())
+        {
+            long long tempSec=difftime(qP[i]->getTime(),time(0));
+            time_t temp= time(0);
+            if(qP[i]->type()==0)
+            {
+                qP[i]->tienChoi=tempSec*qP[i]->m->thanhtien();
+                qP[i]->timeTemp=temp;
+            }
+                else {
+                        qP[i]->tienChoi+=tempSec*qP[i]->getMay()->thanhtien()*qP[i]->tv->uuDai;
+                        qP[i]->timeTemp=temp;
+                }
+
+        }
+    }
+
+}
 

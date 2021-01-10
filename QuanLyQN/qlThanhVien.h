@@ -16,6 +16,8 @@ public:
     void taoThanhVien(ThanhVien* tv);
     void display();
     bool check(string username);
+    int getSL(){return soLuong;}
+    void setSL(int sl){soLuong=sl;}
 };
 
 #endif // QLTHANHVIEN_H_INCLUDED

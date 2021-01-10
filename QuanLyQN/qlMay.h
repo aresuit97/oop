@@ -10,7 +10,9 @@ class qlMay
 public:
     void them(May* m);
     May** getDsMay();
-
+    int getSL(){
+    return soLuong;}
+    void setSL(int sl){soLuong=sl;}
 
 };
 #endif // QLMAY_H_INCLUDED

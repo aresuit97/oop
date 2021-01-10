@@ -7,15 +7,11 @@ class phienTV:public Phien{
     ThanhVien* tv;
     string tenTV;
 public:
-    int type(){return 1;}
-    PhienTV(){
-        timeTemp=time(0);
-        cin>>mayID;
-        cin>>thoiGian;
-        cin>>tienChoi;
-        cin>>tenTV;
-//        trangThaiPhien=true;
-    }
+    int type();
+    PhienTV();
+    void moMay();
+    void tatMay();
+
 
 };
 

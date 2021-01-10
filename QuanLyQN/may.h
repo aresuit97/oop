@@ -2,18 +2,20 @@
 #ifndef MAY_H_INCLUDED
 #define MAY_H_INCLUDED
 #include <ctime>
+#include <string>
+ using namespace std;
 
+static int giaTienMayThuong,giaTienMayVip;
 class May
 {
-    //static int giaTienMayThuong,giaTienMayVip;
-    unsigned int  ID;
+
+     int  ID;
     bool trangThai;
-    time_t timeIn;
+    string s;
 public:
     virtual string info();
     virtual int thanhtien();
-    void moMay();
-    unsigned int getID();
+     int getID();
     void doiTrangThai();
 };
 

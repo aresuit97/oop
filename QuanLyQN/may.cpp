@@ -10,7 +10,7 @@ void May::tatMay(){
 }
 
 
-unsigned int May::getID(){return ID};
+int May::getID(){return ID};
 
 void May::doiTrangThai(){
     trangThai=(trangThai==true)?false:true;

@@ -12,7 +12,8 @@ public:
     void themPhien(phienTV p);
     void themPhien(phienNonTV p);
     void update();
-
+    int getSL(){return soLuong;}
+    void setSL(int sl){soLuong=sl;}
 
 };
 

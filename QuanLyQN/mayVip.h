@@ -5,13 +5,13 @@
 
 class mayVip:public may()
 {
-   public:
-        int thanhtien()
+public:
+    int thanhtien()
     {
-            if(tv!=null)
-                return difftime(time(0),timeIn)*giaTienVip*tv.uuDai;
-            else return difftime(time(0),timeIn)*giaTienVip;
+        giaTienVip;
+    };
+    string info(){
+    return "VIP";
     }
-};
 
 #endif // MAYVIP_H_INCLUDED

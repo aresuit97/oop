@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1610206892 source:e:\c++\quanlyqn\main.cpp
+1610208039 source:e:\c++\quanlyqn\main.cpp
 	<iostream>
 	<ctime>
 	"qlThanhVien.h"
@@ -8,17 +8,17 @@
 	<iostream>
 	<iomanip>
 
-1610133847 source:e:\c++\quanlyqn\menu.cpp
+1610252665 source:e:\c++\quanlyqn\menu.cpp
 	"menu.h"
 	"qlThanhVien.h"
 
-1610205630 source:e:\c++\quanlyqn\qlthanhvien.cpp
+1610209235 source:e:\c++\quanlyqn\qlthanhvien.cpp
 	"qlThanhVien.h"
 
-1610205370 e:\c++\quanlyqn\qlthanhvien.h
+1610251777 e:\c++\quanlyqn\qlthanhvien.h
 	"thanhVien.h"
 
-1610206897 e:\c++\quanlyqn\thanhvien.h
+1610249878 e:\c++\quanlyqn\thanhvien.h
 	<string>
 	<iostream>
 	<iomanip>
@@ -26,18 +26,20 @@
 	<string>
 	"menu.h"
 
-1610133459 source:e:\c++\quanlyqn\qlmay.cpp
+1610246745 source:e:\c++\quanlyqn\qlmay.cpp
+	"qlMay.h"
 
 1609826705 e:\c++\quanlyqn\thanhvien.cpp
 	"thanhVien.h"
 
-1610201487 e:\c++\quanlyqn\qlmay.h
+1610251621 e:\c++\quanlyqn\qlmay.h
 	"may.h"
 
-1610201479 e:\c++\quanlyqn\may.h
+1610251283 e:\c++\quanlyqn\may.h
 	<ctime>
+	<string>
 
-1610205384 e:\c++\quanlyqn\phien.h
+1610252664 e:\c++\quanlyqn\phien.h
 	"thanhVien.h"
 	"may.h"
 	"qlMay.h"
@@ -50,9 +52,21 @@
 	"phienTV.h"
 	"phienNonTV.h"
 
-1610205443 e:\c++\quanlyqn\phientv.h
+1610250395 e:\c++\quanlyqn\phientv.h
 	"phien.h"
 
-1610204107 e:\c++\quanlyqn\phiennontv.h
+1610249390 e:\c++\quanlyqn\phiennontv.h
 	"phien.h"
+
+1610250455 source:e:\c++\quanlyqn\phientv.cpp
+	"phienTV.h"
+
+1610250618 source:e:\c++\quanlyqn\phiennontv.cpp
+	"phienNonTV.h"
+
+1610251059 source:e:\c++\quanlyqn\phien.cpp
+	"phien.h"
+
+1610252164 source:e:\c++\quanlyqn\thanhvien.cpp
+	"thanhVien.h"
 

@@ -13,14 +13,30 @@ protected:
     long long thoiGian;
     long long tienChoi;
     May* m;
-    bool trangThaiPhien();
+    bool trangThaiPhien;
+    ThanhVien* tv;
+    string tenTV;
 public:
     virtual int type ();
 
-//    void doiTrangThai(){
-//        trangThaiPhien=(trangThaiPhien==true)?false:true;
-//    }
+    void doiTrangThai(){
+        trangThaiPhien=(trangThaiPhien)?false:true;
+    }
     time_t getTime(){return timeTemp;};
+    virtual void tatMay();
+    virtual void moMay();
+    May* getMay();
+    void setMay(May* m);
+    long long getThoiGian();
+    void setThoiGian(long long tg);
+    long long getTienChoi();
+    void setTienChoi(long long tien);
+    bool getTrangThai();
+    int getId()
+    {
+        return mayID;
+    };
+
 
 };
 

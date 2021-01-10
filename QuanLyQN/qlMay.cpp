@@ -15,15 +15,15 @@ void qlMay::them(May* m)
         for (int i=0;i<soLuong;i++){
             temp[i]=qMay[i];
         }
-        temp[soLuong]=qMay;
+        temp[soLuong]=m;
         delete[] qMay;
-        tv=temp;
+        qMay=temp;
         soLuong++;
     }
 }
 
 
-May* qlMay::getDsMay()
+May** qlMay::getDsMay()
 {
     return qMay;
 }

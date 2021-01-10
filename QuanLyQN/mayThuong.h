@@ -9,9 +9,10 @@ public:
 
     int thanhtien()
     {
-        if(tv!=null)
-            return difftime(time(0),timeIn)*giaTienThuong*tv.uuDai;
-        else return difftime(time(0),timeIn)*giaTienThuong;
+            return giaTienThuong;
+    }
+    string info(){
+            return "thuong";
     }
 
 };
