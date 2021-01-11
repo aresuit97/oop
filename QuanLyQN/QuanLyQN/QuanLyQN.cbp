@@ -33,13 +33,9 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
-		<Unit filename="may.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="may.cpp" />
 		<Unit filename="may.h" />
-		<Unit filename="mayThuong.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="mayVip.cpp" />
 		<Unit filename="mayVip.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -47,10 +43,13 @@
 		<Unit filename="menu.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="phien.cpp" />
 		<Unit filename="phien.h" />
+		<Unit filename="phienNonTV.cpp" />
 		<Unit filename="phienNonTV.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="phienTV.cpp" />
 		<Unit filename="phienTV.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -65,6 +64,7 @@
 		<Unit filename="quanLy.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="thanhVien.cpp" />
 		<Unit filename="thanhVien.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

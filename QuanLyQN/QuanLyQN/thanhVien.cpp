@@ -2,10 +2,19 @@
 
 ThanhVien::ThanhVien()
 {
-    soGioChoi=0;
+    thoiGianChoi=0;
     soTien=0;
     username=pw=ten=sdt="";
     uuDai=1;
+}
+ThanhVien::ThanhVien(string username,string pw,string ten,string sdt,int soTien,int thoiGianChoi,float uuDai){
+    username=username;
+    pw=pw;
+    ten=ten;
+    sdt=sdt;
+    soTien=soTien;
+    thoiGianChoi=thoiGianChoi;
+    uuDai=uuDai;
 }
 
 string ThanhVien::getUsername()
@@ -15,7 +24,7 @@ string ThanhVien::getUsername()
 
 void ThanhVien::taoTV()
 {
-    fflush(stdin);
+
     cout<<"Nhap ten moi: ";
     getline(cin,this->ten);
     cout<<"Nhap sdt moi: ";
@@ -50,30 +59,95 @@ void ThanhVien::thongTinTaiKhoan()
     else cout<<setw(40)<<right<<"VIP"<<endl;
 }
 
-void ThanhVien::capNhapVip(){
-    if(soGioChoi>1000)uuDai=0.9;
-    if(soGioChoi>2000)uuDai=0.8;
+void ThanhVien::capNhapVip()
+{
+    if(thoiGianChoi>1000)uuDai=0.9;
+    if(thoiGianChoi>2000)uuDai=0.8;
 }
 
-void ThanhVien::napTien(){
+void ThanhVien::napTien()
+{
     cout<<"Nhap so tien can nap:";
     int i;
     cin>>i;
     soTien+=i;
 }
 
-void ThanhVien::suaThongTin(){
+void ThanhVien::suaThongTin()
+{
     cout<<"Sua thong tin tai khoan:"<<endl;
     cout<<"1. Ten"<<endl;
     cout<<"2. SDT"<<endl;
     int i;
     cin>>i;
-    if(i==1){
+    if(i==1)
+    {
         cout<<"Nhap ten moi: ";
         getline(cin,ten);
     }
-    if(i==2){
+    if(i==2)
+    {
         cout<<"Nhap SDT moi: ";
         getline(cin,sdt);
     }
 }
+
+float ThanhVien::getUudai()
+{
+    return uuDai;
+}
+int ThanhVien::getTien()
+{
+    return soTien;
+};
+void ThanhVien::setTien (int i)
+{
+    soTien=i;
+};
+void ThanhVien::congThoiGian(int n)
+{
+    thoiGianChoi+=n;
+}
+string ThanhVien::getTen()
+{
+    return ten;
+}
+string ThanhVien::getPW()
+{
+    return pw;
+}
+string ThanhVien::getSDT()
+{
+    return sdt;
+}
+int ThanhVien::getThoiGianChoi()
+{
+    return thoiGianChoi;
+}
+void ThanhVien::setUsername(string temp)
+{
+    this->username=temp;
+};
+
+void ThanhVien::setPW(string temp)
+{
+    pw=temp;
+};
+
+void  ThanhVien::setTen(string temp)
+{
+    ten=temp;
+};
+void ThanhVien::setSDT(string temp)
+{
+    sdt=temp;
+};
+
+void ThanhVien::setThoiGianChoi(int  thoiGian)
+{
+    thoiGianChoi=thoiGian;
+};
+void ThanhVien::setUuDai(float uuDai)
+{
+    uuDai=uuDai;
+};

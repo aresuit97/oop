@@ -1,21 +1,37 @@
 #include "may.h"
 
-
-void May::moMay(){
-    trangThai=true;
-    timeIn=time(0);
-}
-void May::tatMay(){
-    trangThai=false;
-}
-
-
-int May::getID(){return ID};
+string May::info(){
+        return "NOR";
+    };
+int May::thanhtien(){
+        return giaTienMayThuong;
+    };
+int May::getID() {return ID;}
 
 void May::doiTrangThai(){
-    trangThai=(trangThai==true)?false:true;
+    trangThai=(trangThai)?false:true;
+};
+
+void May::setID(int n){
+    ID=n;
+};
+
+May::May(int n){
+    trangThai=false;
+    ID=n;
 }
+May::May()
+    {
+        trangThai=false;
+        ID=0;
+    };
+
+void May::display(){
+        cout<<"NOR"<<ID<<"  "<<trangThai<<endl;
+    }
 
 
-
+bool May::getTrangThai(){
+    return trangThai;
+}
 

@@ -6,7 +6,10 @@
 using namespace std;
 
     void adminMenu();
-
+    void tvMenu();
+    void phienMenu();
+    void mayMenu();
+    void thaydoiGia();
 
 
 #endif // MENU_H_INCLUDED

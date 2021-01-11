@@ -1,0 +1,8 @@
+NOR
+1
+NOR
+2
+VIP
+3
+VIP
+4

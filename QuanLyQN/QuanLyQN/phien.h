@@ -6,38 +6,42 @@
 #include "qlThanhVien.h"
 
 
-class Phien{
+class Phien
+{
 protected:
     time_t timeTemp;
     int mayID;
-    long long thoiGian;
-    long long tienChoi;
+    int thoiGian;
     May* m;
     bool trangThaiPhien;
+    int tienChoi;
     ThanhVien* tv;
     string tenTV;
 public:
-    virtual int type ();
-
-    void doiTrangThai(){
-        trangThaiPhien=(trangThaiPhien)?false:true;
-    }
-    time_t getTime(){return timeTemp;};
-    virtual void tatMay();
-    virtual void moMay();
-    May* getMay();
+    virtual int type ()=0;
+    void doiTrangThai();
+    virtual void tatMay()=0;
+    virtual void tinhTien()=0;
+    May* getMay();                          //cac ham setter getter
     void setMay(May* m);
-    long long getThoiGian();
-    void setThoiGian(long long tg);
-    long long getTienChoi();
-    void setTienChoi(long long tien);
+    int  getThoiGian();
+    void setThoiGian(int tg);
+    int getTienChoi(){
+    return tienChoi;};
+    void setTienChoi(int tien){tienChoi=tien;};
     bool getTrangThai();
-    int getId()
-    {
-        return mayID;
-    };
+    int getId();
 
+    string gettenTV();
+    time_t getTime(){return timeTemp;};
+    void setTime(time_t time);
+    void  setID(int id);
+    void setUsername(string tenTV);
+    void setTrangThai(bool b);
 
+    virtual void display()=0;
+    ThanhVien* getTV();
+    void setTV(ThanhVien* tvien);
 };
 
 

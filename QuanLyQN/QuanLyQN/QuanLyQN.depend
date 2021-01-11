@@ -1,24 +1,25 @@
 # depslib dependency file v1.0
-1610208039 source:e:\c++\quanlyqn\main.cpp
+1610389681 source:e:\c++\quanlyqn\main.cpp
 	<iostream>
 	<ctime>
 	"qlThanhVien.h"
+	"qlPhien.h"
 
-1610132810 e:\c++\quanlyqn\menu.h
+1610253678 e:\c++\quanlyqn\menu.h
 	<iostream>
 	<iomanip>
 
-1610133847 source:e:\c++\quanlyqn\menu.cpp
+1610292593 source:e:\c++\quanlyqn\menu.cpp
 	"menu.h"
+	"qlPhien.h"
+
+1610375553 source:e:\c++\quanlyqn\qlthanhvien.cpp
 	"qlThanhVien.h"
 
-1610209235 source:e:\c++\quanlyqn\qlthanhvien.cpp
-	"qlThanhVien.h"
-
-1610251777 e:\c++\quanlyqn\qlthanhvien.h
+1610356481 e:\c++\quanlyqn\qlthanhvien.h
 	"thanhVien.h"
 
-1610249878 e:\c++\quanlyqn\thanhvien.h
+1610357568 e:\c++\quanlyqn\thanhvien.h
 	<string>
 	<iostream>
 	<iomanip>
@@ -26,44 +27,66 @@
 	<string>
 	"menu.h"
 
-1610246745 source:e:\c++\quanlyqn\qlmay.cpp
+1610379439 source:e:\c++\quanlyqn\qlmay.cpp
 	"qlMay.h"
 
 1609826705 e:\c++\quanlyqn\thanhvien.cpp
 	"thanhVien.h"
 
-1610251621 e:\c++\quanlyqn\qlmay.h
-	"may.h"
+1610379417 e:\c++\quanlyqn\qlmay.h
+	"mayVip.h"
 
-1610251283 e:\c++\quanlyqn\may.h
+1610384802 e:\c++\quanlyqn\may.h
 	<ctime>
 	<string>
+	<iostream>
 
-1610252664 e:\c++\quanlyqn\phien.h
+1610388135 e:\c++\quanlyqn\phien.h
 	"thanhVien.h"
 	"may.h"
 	"qlMay.h"
 	"qlThanhVien.h"
 
-1610205464 source:e:\c++\quanlyqn\qlphien.cpp
+1610389430 source:e:\c++\quanlyqn\qlphien.cpp
 	"qlPhien.h"
 
-1610205040 e:\c++\quanlyqn\qlphien.h
+1610382024 e:\c++\quanlyqn\qlphien.h
 	"phienTV.h"
 	"phienNonTV.h"
+	<fstream>
+	<istream>
 
-1610250395 e:\c++\quanlyqn\phientv.h
+1610389617 e:\c++\quanlyqn\phientv.h
+	"string"
 	"phien.h"
 
-1610249390 e:\c++\quanlyqn\phiennontv.h
+1610387274 e:\c++\quanlyqn\phiennontv.h
 	"phien.h"
 
-1610250455 source:e:\c++\quanlyqn\phientv.cpp
+1610389751 source:e:\c++\quanlyqn\phientv.cpp
 	"phienTV.h"
 
-1610250618 source:e:\c++\quanlyqn\phiennontv.cpp
+1610388493 source:e:\c++\quanlyqn\phiennontv.cpp
 	"phienNonTV.h"
 
-1610251059 source:e:\c++\quanlyqn\phien.cpp
+1610387381 source:e:\c++\quanlyqn\phien.cpp
 	"phien.h"
+
+1610359941 source:e:\c++\quanlyqn\thanhvien.cpp
+	"thanhVien.h"
+
+1610376617 e:\c++\quanlyqn\maythuong.h
+	"may.h"
+
+1610379416 e:\c++\quanlyqn\mayvip.h
+	"may.h"
+
+1610331277 source:e:\c++\quanlyqn\maythuong.cpp
+	"mayThuong.h"
+
+1610378907 source:e:\c++\quanlyqn\mayvip.cpp
+	"mayVip.h"
+
+1610384790 source:e:\c++\quanlyqn\may.cpp
+	"may.h"
 

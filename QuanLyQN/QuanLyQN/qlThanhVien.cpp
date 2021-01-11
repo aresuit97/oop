@@ -10,19 +10,15 @@ void qlThanhVien:: display()
 {
     for(int i=0; i<soLuong; i++)
     {
-        tv[i]->thongTinTaiKhoan();
+        tv[i]->thongTinTaiKhoan();cout<<endl;
     }
 
     cout << endl;
 }
 
-//int qlThanhVien::check(string a ){
-//    for (int i=0;i<soLuong;i++){
-//        if(a==tv[i].getUsername())
-//            return i;
-//    }
-//    return -1;
-//}
+ThanhVien** qlThanhVien::getds(){
+        return tv;
+    }
 
 void qlThanhVien::themTV(ThanhVien* tvien )
 {
@@ -45,3 +41,13 @@ void qlThanhVien::themTV(ThanhVien* tvien )
         soLuong++;
     }
 }
+
+void qlThanhVien::reset(){
+    soLuong=0;
+    if(tv!=nullptr)delete[] tv;
+    tv=nullptr;
+}
+
+void qlThanhVien::setDSTV(ThanhVien** tvi){
+    tv=tvi;
+};
