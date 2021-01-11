@@ -10,8 +10,8 @@ public:
     int type();
     PhienNonTV();
     void tatMay();
-    void moMay();
-
+    void update();
+    void tinhTien();
 
 };
 

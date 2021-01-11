@@ -1,14 +1,17 @@
 
 #ifndef QLMAY_H_INCLUDED
 #define QLMAY_H_INCLUDED
-#include "may.h"
+#include "mayThuong.h"
+#include "mayVip.h"
 
 class qlMay
 {
     int soLuong;
     May** qMay;
 public:
-    void them(May* m);
+    qlMay();
+    void them(mayThuong* m);
+    void them(mayVip* m);
     May** getDsMay();
     int getSL(){
     return soLuong;}

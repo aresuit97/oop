@@ -3,15 +3,12 @@
 #define MAYVIP_H_INCLUDED
 #include "may.h"
 
-class mayVip:public may()
+class mayVip:public May
 {
 public:
-    int thanhtien()
-    {
-        giaTienVip;
-    };
-    string info(){
-    return "VIP";
-    }
-
+    int thanhtien();
+    string info();
+    void doiTrangThai();
+    void setID(int id);
+};
 #endif // MAYVIP_H_INCLUDED

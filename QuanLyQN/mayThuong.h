@@ -3,17 +3,16 @@
 #define MAYTHUONG_H_INCLUDED
 #include "may.h"
 
-class mayThuong:public may()
+using namespace std;
+
+class mayThuong:public May
 {
 public:
 
-    int thanhtien()
-    {
-            return giaTienThuong;
-    }
-    string info(){
-            return "thuong";
-    }
+    int thanhtien();
+    string info();
+    void doiTrangThai();
+    void setID(int id);
 
 };
 

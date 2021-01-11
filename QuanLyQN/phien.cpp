@@ -8,19 +8,19 @@ void Phien::setMay(May* may)
 {
     m=may;
 };
-long long Phien::getThoiGian()
+int Phien::getThoiGian()
 {
     return thoiGian;
 };
-void Phien::setThoiGian(long long tg )
+void Phien::setThoiGian(int tg )
 {
     thoiGian=tg;
 };
-long long Phien::getTienChoi()
+int Phien::getTienChoi()
 {
     return tienChoi;
 };
-void Phien::setTienChoi(long long tien)
+void Phien::setTienChoi(int tien)
 {
     tienChoi=tien;
 };
@@ -28,3 +28,12 @@ bool Phien::getTrangThai()
 {
     return trangThaiPhien;
 };
+
+int Phien::getId()
+    {
+        return mayID;
+    };
+
+void Phien::setTime(time_t time){
+        timeTemp=time;
+    }

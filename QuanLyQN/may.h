@@ -8,15 +8,15 @@
 static int giaTienMayThuong,giaTienMayVip;
 class May
 {
-
-     int  ID;
+protected:
+    int  ID;
     bool trangThai;
-    string s;
 public:
     virtual string info();
     virtual int thanhtien();
-     int getID();
-    void doiTrangThai();
+    int getID(){return ID;};
+    virtual void doiTrangThai();
+    virtual void setID()=0;
 };
 
 

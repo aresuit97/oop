@@ -18,6 +18,7 @@ public:
     bool check(string username);
     int getSL(){return soLuong;}
     void setSL(int sl){soLuong=sl;}
+    ThanhVien** getds();
 };
 
 #endif // QLTHANHVIEN_H_INCLUDED

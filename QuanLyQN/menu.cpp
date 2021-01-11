@@ -1,7 +1,6 @@
 #include "menu.h"
-#include "qlThanhVien.h"
+#include "qlPhien.h"
 
-qlThanhVien qltv;
 
 void adminMenu()
 {
@@ -26,4 +25,34 @@ void adminMenu()
     {
         system("CLS");
     }
+}
+void thaydoiGia()
+{
+    cout<<"Ban muon thay doi gia cua: "<<endl;
+    cout<<"   1.May thuong."<<endl;
+    cout<<"   2.May vip."<<endl;
+    cout<<"Chon option cua ban(Nhap 0 de quay lai):";
+        int n;
+    cin>>n;
+    while (n!=2&&n!=1&&n!=0)
+    {
+        cout<<"Hay nhap chinh xac!. Lua chon cua ban:";
+        cin>>n;
+    }
+    if(n==0)return;
+    if(n==1)
+    {
+        cout<<"Gia cua may thuong hien tai dang la "<<giaTienMayThuong<<" d/h."<<endl;
+        cout<<"Ban hay nhap gia moi:";
+        cin>>giaTienMayThuong;
+        return;
+    }
+    if(n==2)
+    {
+        cout<<"Gia cua may thuong VIP dang la "<<giaTienMayVip<<" d/h."<<endl;
+        cout<<"Ban hay nhap gia moi:";
+        cin>>giaTienMayVip;
+        return;
+    }
+
 }

@@ -33,9 +33,6 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
-		<Unit filename="may.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="may.h" />
 		<Unit filename="mayThuong.h">
 			<Option target="&lt;{~None~}&gt;" />

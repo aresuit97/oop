@@ -24,6 +24,10 @@ void qlThanhVien:: display()
 //    return -1;
 //}
 
+ThanhVien** qlThanhVien::getds(){
+        return tv;
+    }
+
 void qlThanhVien::themTV(ThanhVien* tvien )
 {
     if(soLuong==0)

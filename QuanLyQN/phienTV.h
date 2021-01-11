@@ -4,13 +4,13 @@
 #include "phien.h"
 
 class phienTV:public Phien{
-    ThanhVien* tv;
-    string tenTV;
+
 public:
     int type();
     PhienTV();
-    void moMay();
+
     void tatMay();
+    void tinhTien();
 
 
 };

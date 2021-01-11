@@ -12,8 +12,7 @@ using namespace std;
 
 class ThanhVien
 {
-    float soGioChoi;
-    int soTien;
+    int thoiGianChoi,soTien;
     string username,pw,ten;
     string sdt;
     float uuDai;
@@ -25,6 +24,20 @@ public:
     void capNhapVip();
     void napTien();
     void suaThongTin();
+    float getUudai();
+    int getTien();
+    void setTien (int i);
+    void congThoiGian(int n);
+    string getTen();
+    string getPW();
+    string getSDT();
+    int getThoiGianChoi();
+    void setUsername(string temp);
+    void setPW(string temp);
+    void  setTen(string temp);
+    void setSDT(string temp);
+    void setThoiGianChoi(int  thoiGian);
+    void setUuDai(float uuDai);
 
 };
 

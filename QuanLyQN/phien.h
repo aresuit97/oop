@@ -10,34 +10,32 @@ class Phien{
 protected:
     time_t timeTemp;
     int mayID;
-    long long thoiGian;
-    long long tienChoi;
+    int thoiGian,tienChoi;
     May* m;
     bool trangThaiPhien;
     ThanhVien* tv;
     string tenTV;
 public:
-    virtual int type ();
-
-    void doiTrangThai(){
-        trangThaiPhien=(trangThaiPhien)?false:true;
-    }
+    virtual int type ()=0;
+    virtual void doiTrangThai()=0;
     time_t getTime(){return timeTemp;};
     virtual void tatMay();
-    virtual void moMay();
     May* getMay();
     void setMay(May* m);
-    long long getThoiGian();
-    void setThoiGian(long long tg);
-    long long getTienChoi();
-    void setTienChoi(long long tien);
+    int  getThoiGian();
+    void setThoiGian(int tg);
+    int getTienChoi();
+    void setTienChoi(int tien);
     bool getTrangThai();
-    int getId()
-    {
-        return mayID;
-    };
-
-
+    int getId();
+    ThanhVien* getTV(){return tv;};
+    void setTV(ThanhVien* tvien){tv=tvien;}
+    virtual void tinhTien();
+    void setTime(time_t time);
+    void  setID(int id){mayID=id;}
+    void setUsername(string tenTV){tenTV=tenTV;};
+    void setTrangThai(bool b){trangThaiPhien=b;};
+    virtual ~Phien(){};
 };
 
 

@@ -2,7 +2,7 @@
 
 ThanhVien::ThanhVien()
 {
-    soGioChoi=0;
+    thoiGianChoi=0;
     soTien=0;
     username=pw=ten=sdt="";
     uuDai=1;
@@ -51,8 +51,8 @@ void ThanhVien::thongTinTaiKhoan()
 }
 
 void ThanhVien::capNhapVip(){
-    if(soGioChoi>1000)uuDai=0.9;
-    if(soGioChoi>2000)uuDai=0.8;
+    if(thoiGianChoi>1000)uuDai=0.9;
+    if(thoiGianChoi>2000)uuDai=0.8;
 }
 
 void ThanhVien::napTien(){
@@ -77,3 +77,63 @@ void ThanhVien::suaThongTin(){
         getline(cin,sdt);
     }
 }
+
+float ThanhVien::getUudai()
+    {
+        return uuDai;
+    }
+    int ThanhVien::getTien()
+    {
+        return soTien;
+    };
+    void ThanhVien::setTien (int i)
+    {
+        soTien=i;
+    };
+    void ThanhVien::congThoiGian(int n)
+    {
+        thoiGianChoi+=n;
+    }
+    string ThanhVien::getTen()
+    {
+        return ten;
+    }
+    string ThanhVien::getPW()
+    {
+        return pw;
+    }
+    string ThanhVien::getSDT()
+    {
+        return sdt;
+    }
+    int ThanhVien::getThoiGianChoi()
+    {
+        return thoiGianChoi;
+    }
+    void ThanhVien::setUsername(string temp)
+    {
+        username=temp;
+    };
+
+    void ThanhVien::setPW(string temp)
+    {
+        pw=temp;
+    };
+
+    void  ThanhVien::setTen(string temp)
+    {
+        ten=temp;
+    };
+    void ThanhVien::setSDT(string temp)
+    {
+        sdt=temp;
+    };
+
+    void ThanhVien::setThoiGianChoi(int  thoiGian)
+    {
+        thoiGianChoi=thoiGian;
+    };
+    void ThanhVien::setUuDai(float uuDai)
+    {
+        uuDai=uuDai;
+    };
