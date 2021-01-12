@@ -33,10 +33,9 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="may.cpp" />
 		<Unit filename="may.h" />
-		<Unit filename="mayThuong.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="mayVip.cpp" />
 		<Unit filename="mayVip.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -69,9 +68,7 @@
 		<Unit filename="thanhVien.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="xuLy.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="tool.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

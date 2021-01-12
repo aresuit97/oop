@@ -3,13 +3,20 @@
 #define MENU_H_INCLUDED
 #include <iostream>
 #include <iomanip>
-using namespace std;
-
+#include "qlPhien.h"
+#include "tool.h"
+class Menu{
+public:
+    qlPhien qlP;
     void adminMenu();
     void tvMenu();
     void phienMenu();
     void mayMenu();
     void thaydoiGia();
+    void quanLiTaiKhoanThanhVien();
+    void taoThanhVien();
+    void timThanhVien();
 
 
+};
 #endif // MENU_H_INCLUDED

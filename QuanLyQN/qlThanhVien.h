@@ -6,7 +6,7 @@
 
 class qlThanhVien
 {
-    int soLuong;
+    int soLuongTV;
     ThanhVien** tv;
 public:
     qlThanhVien();
@@ -15,10 +15,13 @@ public:
     void xuatraFile();
     void taoThanhVien(ThanhVien* tv);
     void display();
-    bool check(string username);
-    int getSL(){return soLuong;}
-    void setSL(int sl){soLuong=sl;}
+    int getSL(){return soLuongTV;}
+    void setSL(int sl){soLuongTV=sl;}
     ThanhVien** getds();
+    void reset();
+    void setDSTV(ThanhVien** tv);
+    bool check(string user);
+    void xoaThanhVien (int pos);
 };
 
 #endif // QLTHANHVIEN_H_INCLUDED

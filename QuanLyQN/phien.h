@@ -1,41 +1,45 @@
 #ifndef PHIEN_H_INCLUDED
 #define PHIEN_H_INCLUDED
-#include "thanhVien.h"
-#include "may.h"
 #include "qlMay.h"
 #include "qlThanhVien.h"
 
 
-class Phien{
+class Phien
+{
 protected:
     time_t timeTemp;
     int mayID;
-    int thoiGian,tienChoi;
+    int thoiGian;
     May* m;
     bool trangThaiPhien;
+    int tienChoi;
     ThanhVien* tv;
     string tenTV;
 public:
     virtual int type ()=0;
-    virtual void doiTrangThai()=0;
-    time_t getTime(){return timeTemp;};
-    virtual void tatMay();
-    May* getMay();
+    void doiTrangThai();
+    virtual void tatMay()=0;
+    virtual void tinhTien()=0;
+
+    May* getMay();                          //cac ham setter getter
     void setMay(May* m);
     int  getThoiGian();
     void setThoiGian(int tg);
-    int getTienChoi();
-    void setTienChoi(int tien);
+    int getTienChoi(){
+    return tienChoi;};
+    void setTienChoi(int tien){tienChoi=tien;};
     bool getTrangThai();
     int getId();
-    ThanhVien* getTV(){return tv;};
-    void setTV(ThanhVien* tvien){tv=tvien;}
-    virtual void tinhTien();
+    string gettenTV();
+    time_t getTime(){return timeTemp;};
     void setTime(time_t time);
-    void  setID(int id){mayID=id;}
-    void setUsername(string tenTV){tenTV=tenTV;};
-    void setTrangThai(bool b){trangThaiPhien=b;};
-    virtual ~Phien(){};
+    void  setID(int id);
+    void setUsername(string tenTV);
+    void setTrangThai(bool b);
+
+    virtual void display()=0;
+    ThanhVien* getTV();
+    void setTV(ThanhVien* tvien);
 };
 
 

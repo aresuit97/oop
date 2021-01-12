@@ -8,7 +8,9 @@ class mayVip:public May
 public:
     int thanhtien();
     string info();
-    void doiTrangThai();
-    void setID(int id);
+    mayVip(int n);
+    void display(){
+        cout<<"VIP"<<ID<<"  "<<trangThai;
+    }
 };
 #endif // MAYVIP_H_INCLUDED

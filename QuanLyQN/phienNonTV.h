@@ -4,14 +4,16 @@
 
 class phienNonTV:public Phien
 {
-
-
 public:
     int type();
-    PhienNonTV();
+    phienNonTV();
     void tatMay();
     void update();
     void tinhTien();
+    void display();
+    phienNonTV(May* may);
+    phienNonTV(int mayid,int thoigian,int tienchoi,bool trangthai);
+    ~phienNonTV();
 
 };
 

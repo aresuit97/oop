@@ -1,7 +1,6 @@
 
 #ifndef QLMAY_H_INCLUDED
 #define QLMAY_H_INCLUDED
-#include "mayThuong.h"
 #include "mayVip.h"
 
 class qlMay
@@ -10,12 +9,14 @@ class qlMay
     May** qMay;
 public:
     qlMay();
-    void them(mayThuong* m);
-    void them(mayVip* m);
+    void them(May* m);
     May** getDsMay();
     int getSL(){
     return soLuong;}
     void setSL(int sl){soLuong=sl;}
+    void setDsMay(May** pt);
+    void reset();
+    void display();
 
 };
 #endif // QLMAY_H_INCLUDED

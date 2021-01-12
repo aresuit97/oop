@@ -1,26 +1,22 @@
 #pragma once
 #ifndef THANHVIEN_H_INCLUDED
 #define THANHVIEN_H_INCLUDED
-#include <string>
 #include <iostream>
 #include <iomanip>
 #include <stdlib.h>
-#include <string>
-#include "menu.h"
-
+#include "tool.h"
 using namespace std;
-
 class ThanhVien
 {
     int thoiGianChoi,soTien;
-    string username,pw,ten;
-    string sdt;
+    string username,pw,ten,sdt;
     float uuDai;
 public:
     ThanhVien();
+    ThanhVien(string username,string pw,string ten,string sdt,int soTien,int thoiGianChoi,float uuDai);
     string getUsername();
-    void taoTV();
     void thongTinTaiKhoan();
+    void taoTV();
     void capNhapVip();
     void napTien();
     void suaThongTin();

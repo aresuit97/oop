@@ -3,7 +3,8 @@
 #define MAY_H_INCLUDED
 #include <ctime>
 #include <string>
- using namespace std;
+#include <iostream>
+using namespace std;
 
 static int giaTienMayThuong,giaTienMayVip;
 class May
@@ -14,9 +15,16 @@ protected:
 public:
     virtual string info();
     virtual int thanhtien();
-    int getID(){return ID;};
-    virtual void doiTrangThai();
-    virtual void setID()=0;
+    int getID();
+    void doiTrangThai();
+    void setID(int n);
+    May(int n);
+    May();
+    virtual void display();
+
+    bool getTrangThai();
+
+
 };
 
 

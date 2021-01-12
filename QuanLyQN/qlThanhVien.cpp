@@ -2,27 +2,19 @@
 
 qlThanhVien::qlThanhVien()
 {
-    soLuong=0;
+    soLuongTV=0;
     tv=nullptr;
 }
 
 void qlThanhVien:: display()
 {
-    for(int i=0; i<soLuong; i++)
+    for(int i=0; i<soLuongTV; i++)
     {
-        tv[i]->thongTinTaiKhoan();
+        tv[i]->thongTinTaiKhoan();cout<<endl;
     }
 
     cout << endl;
 }
-
-//int qlThanhVien::check(string a ){
-//    for (int i=0;i<soLuong;i++){
-//        if(a==tv[i].getUsername())
-//            return i;
-//    }
-//    return -1;
-//}
 
 ThanhVien** qlThanhVien::getds(){
         return tv;
@@ -30,22 +22,54 @@ ThanhVien** qlThanhVien::getds(){
 
 void qlThanhVien::themTV(ThanhVien* tvien )
 {
-    if(soLuong==0)
+    if(soLuongTV==0)
     {
-        soLuong=1;
+        soLuongTV=1;
         tv=new ThanhVien*[1];
         tv[0]=tvien;
     }
     else
     {
-        ThanhVien** temp=new ThanhVien*[soLuong+1];
-        for (int i=0; i<soLuong; i++)
+        ThanhVien** temp=new ThanhVien*[soLuongTV+1];
+        for (int i=0; i<soLuongTV; i++)
         {
             temp[i]=tv[i];
         }
-        temp[soLuong]=tvien;
+        temp[soLuongTV]=tvien;
         delete[] tv;
         tv=temp;
-        soLuong++;
+        soLuongTV++;
     }
+}
+
+void qlThanhVien::reset(){
+    soLuongTV=0;
+    if(tv!=nullptr)delete[] tv;
+    tv=nullptr;
+}
+
+void qlThanhVien::setDSTV(ThanhVien** tvi){
+    tv=tvi;
+};
+
+bool qlThanhVien::check(string user){
+    for (int i=0;i<soLuongTV;i++){
+        if(user==tv[i]->getUsername())return true;
+    }
+    return false;
+}
+
+void qlThanhVien::xoaThanhVien(int pos){
+
+    ThanhVien** temp= new ThanhVien*[soLuongTV-1];
+    for (int i=0;i<pos;i++){
+        temp[i]=tv[i];
+    }
+    for (int i=pos;i<soLuongTV-1;i++){
+        temp[i]=tv[i+1];
+    }
+    delete[] tv;
+    tv=temp;
+    soLuongTV--;
+    cout<<soLuongTV;
 }

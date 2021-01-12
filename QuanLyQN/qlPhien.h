@@ -23,6 +23,12 @@ public:
     void xuatDSTV();
     void xuatDSPhien();
     void nhapDSPhien();
+    void setDSTV(qlThanhVien qt);
+    qlThanhVien getDS();
+    void themThanhVien();
+    qlMay getDSMay(){return qM;};
+    void setDSMay(qlMay m){qM=m;};
+    void display();
 };
 
 
