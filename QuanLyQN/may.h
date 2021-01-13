@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-static int giaTienMayThuong,giaTienMayVip;
+static int giaTienMayThuong=8000,giaTienMayVip=1000;
 class May
 {
 protected:
@@ -14,7 +14,7 @@ protected:
     bool trangThai;
 public:
     virtual string info();
-    virtual int thanhtien();
+    virtual float thanhtien();
     int getID();
     void doiTrangThai();
     void setID(int n);

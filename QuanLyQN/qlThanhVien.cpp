@@ -8,17 +8,33 @@ qlThanhVien::qlThanhVien()
 
 void qlThanhVien:: display()
 {
+    cout<<setfill('-');
+    cout<<setw(81)<<""<<endl;
+    cout<<"Username       Ten thanh vien                SDT      So Tien  Thoi gian  Loai TV"<<endl;
+    cout<<setw(81)<<""<<endl;
+    cout<<setfill(' ');
     for(int i=0; i<soLuongTV; i++)
     {
-        tv[i]->thongTinTaiKhoan();cout<<endl;
+        tv[i]->thongTinTaiKhoan();
+        cout<<endl;
     }
 
     cout << endl;
 }
 
-ThanhVien** qlThanhVien::getds(){
-        return tv;
+ThanhVien* qlThanhVien::searcH(string a){
+    for (int i=0;i<soLuongTV;i++){
+        if(a==this->getds()[i]->getUsername()){
+            return this->getds()[i];
+        }
     }
+    return nullptr;
+}
+
+ThanhVien** qlThanhVien::getds()
+{
+    return tv;
+}
 
 void qlThanhVien::themTV(ThanhVien* tvien )
 {
@@ -41,35 +57,55 @@ void qlThanhVien::themTV(ThanhVien* tvien )
         soLuongTV++;
     }
 }
+void qlThanhVien::capNhatVip(){
+        for (int i=0;i<soLuongTV;i++){
+            tv[i]->capNhatVip();
+        }
+}
 
-void qlThanhVien::reset(){
+void qlThanhVien::reset()
+{
     soLuongTV=0;
     if(tv!=nullptr)delete[] tv;
     tv=nullptr;
 }
 
-void qlThanhVien::setDSTV(ThanhVien** tvi){
+void qlThanhVien::setDSTV(ThanhVien** tvi)
+{
     tv=tvi;
 };
 
-bool qlThanhVien::check(string user){
-    for (int i=0;i<soLuongTV;i++){
+bool qlThanhVien::check(string user)
+{
+    for (int i=0; i<soLuongTV; i++)
+    {
         if(user==tv[i]->getUsername())return true;
     }
     return false;
 }
 
-void qlThanhVien::xoaThanhVien(int pos){
+void qlThanhVien::xoaThanhVien(int pos)
+{
 
     ThanhVien** temp= new ThanhVien*[soLuongTV-1];
-    for (int i=0;i<pos;i++){
+    for (int i=0; i<pos; i++)
+    {
         temp[i]=tv[i];
     }
-    for (int i=pos;i<soLuongTV-1;i++){
+    for (int i=pos; i<soLuongTV-1; i++)
+    {
         temp[i]=tv[i+1];
     }
     delete[] tv;
     tv=temp;
     soLuongTV--;
-    cout<<soLuongTV;
+}
+
+int qlThanhVien::getSL()
+{
+    return soLuongTV;
+}
+void qlThanhVien::setSL(int sl)
+{
+    soLuongTV=sl;
 }

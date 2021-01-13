@@ -1,5 +1,5 @@
 #include "qlPhien.h"
-
+#include <ctime>
 qlPhien::qlPhien()
 {
     qP=nullptr;
@@ -61,30 +61,37 @@ void qlPhien::update()
         if(!qP[i]->getTrangThai())continue;
         if(qP[i]->getMay()==nullptr)
         {
-            qP[i]->setMay(qM.getDsMay()[qP[i]->getId()]);
+            May** tempMay=qM.getDsMay();
+            if(!qM.check(qP[i]->getId()))
+            {
+                qP[i]->doiTrangThai();
+                qP[i]->setID(0);
+                continue;
+            }
+            for(int j=0; j<qM.getSL(); j++)
+            {
+                if(qP[i]->getId()==tempMay[j]->getID())
+                {
+                    qP[i]->setMay(tempMay[j]);
+                    tempMay[j]->doiTrangThai();
+                    break;
+                }
+            }
             if(qP[i]->type()==1)
             {
-                ThanhVien** tempDS= qTV.getds();
-                for (int j=0; j<qTV.getSL(); j++)
-                {
-                    if(qP[i]->gettenTV()==tempDS[i]->getUsername())
-                    {
-                        qP[i]->setTV(tempDS[i]);
-                    }
+                string t=qP[i]->gettenTV();
+                qP[i]->setTV(this->getDS().searcH(t));
+                if(qP[i]->getTV()==nullptr){
+                    qP[i]->doiTrangThai();
                 }
             }
 
         }
-        long long tempSec=difftime(qP[i]->getTime(),time(0));
+        int tempSec=difftime(time(0),qP[i]->getTime());
         time_t temp= time(0);
-        if(qP[i]->type()==0)
-        {
-            qP[i]->tinhTien();
-            qP[i]->setTime(temp);
-        }
-
+        qP[i]->tinhTien();
+        qP[i]->setTime(temp);
     }
-
 }
 
 long long qlPhien::tongDoanhthu()
@@ -182,10 +189,10 @@ void qlPhien::nhapDSTV()
             tempTV->setUuDai(uuDai);
             fi>>tempI;
             tempTV->setThoiGianChoi(tempI);;
-            cout<<endl;
             qTV.themTV(tempTV);
             tempTV=nullptr;
     }
+    qTV.capNhatVip();
     fi.close();
 }
 
@@ -276,46 +283,279 @@ qlThanhVien qlPhien::getDS()
 
 void qlPhien::themThanhVien()
 {
-    int n;
-    cout<<"Nhap so thanh vien ban muon them vao: ";
-    cin>>n;
-    qlThanhVien tempDS=qTV;
-    for (int i=0; i<2; i++)
+    Tool t;
+    cout<<"Nhap username: ";
+    string username;
+    getline(cin,username);
+    while(this->getDS().check(username)||!t.checkKhoangTrang(username))
     {
-        cout<<"Nhap thanh vien thu "<<i+1<<": "<<endl;
-        ThanhVien* temp =new ThanhVien();
-        cout<<"Nhap username:";
-        string tbd;
-        cin>>tbd;
-        temp->setUsername(tbd);
-        cin.ignore();
-        cout<<"Nhap pw:";
-        cin>>tbd;
-        temp->setPW(tbd);
-        cin.ignore();
-        cout<<"Nhap ten:";
-        getline(cin,tbd);
-        temp->setTen(tbd);
-        cout<<"Nhap sdt:";
-        cin>>tbd;
-        temp->setSDT(tbd);
-        cin.ignore();
-        cout<<"Nhap so tien:";
-        int tien;
-        cin>>tien;
-        temp->setTien(tien);
-        cin.ignore();
-        cout<<"Nhap thoi gian choi:";
-        cin>>tien;
-        temp->setThoiGianChoi(tien);
-        tempDS.themTV(temp);
+        cout<<"Username khong hop le. Vui long nhap lai:";
+        getline(cin,username);
     }
-    qTV=tempDS;
+    cout<<"Nhap ten: ";
+    string ten;
+    getline(cin,ten);
+    ten=t.chuanHoa(ten);
+    cout<<"Nhap mat khau: " ;
+    string newPW;
+    getline(cin,newPW);
+    while(!t.matkhau(newPW))
+    {
+        cout<<"Nhap lai mat khau  (Mat khau gom it nhat 4 ki tu va la chuoi lien ke): ";
+        getline(cin,newPW);
+    }
+    cout<<"Xac nhan mat khau: ";
+    string tempPW;
+    getline(cin,tempPW);
+    while (newPW!=tempPW)
+    {
+        cout<<"Mat khau khong khop! Nhap lai mat khau moi(Mat khau gom it nhat 4 ki tu va la chuoi lien ke): ";
+        getline(cin,newPW);
+        while(!t.matkhau(newPW))
+        {
+            cout<<"Nhap lai mat khau moi(Mat khau gom it nhat 4 ki tu va la chuoi lien ke): ";
+            getline(cin,newPW);
+        }
+        cout<<"Xac nhan mat khau: ";
+        getline(cin,tempPW);
+    }
+    string SDT;
+    cout<<"Nhap sdt: ";
+    cin>>SDT;
+    while(t.isSDT(SDT)==false)
+    {
+        cout<<"So dien thoai chi bao gom co 10 chu so. Hay nhap lai: ";
+        cin>>SDT;
+    }
+
+    int soTien;
+    cout<<"Nhap so tien nap lan dau: ";
+    cin>>soTien;
+    ThanhVien* temp= new ThanhVien(username,newPW,ten,SDT,soTien,0,1);
+    qlThanhVien tv=this->getDS();
+    tv.themTV(temp);
+    this->setDSTV(tv);
+    cout<<"Da tao thanh vien moi."<<endl;
 }
 
-//void qlPhien::xoaMay(){
-//    for (int i=0;i<)
-//}
+void qlPhien::taoMay(){
+    Tool t;
+    cout<<"Ban muon tao them loai may: "<<endl;
+    cout<<"1. May thuong."<<endl;
+    cout<<"2. May vip."<<endl;
+    string in;
+    getline(cin,in);
+    while(in!="1"&&in!="2"&&in!="0")
+    {
+        cout<<"In khong hop le. Vui long nhap lai:";
+        getline(cin,in);
+    }
+    if(in=="0")return;
+    if(in=="1")
+    {
+        string idM;
+        cout<<"Nhap id may(ID phai <100):";
+
+        int flag=0,n;
+        while(!flag)
+        {
+            getline(cin,idM);
+            while(!(t.laSo(idM)&&idM.length()<=2))
+            {
+                cout<<"Vui long nhap lai( ID phai la so va < be hon 100 hoac ID khong hop le):";
+                getline(cin,idM);
+            }
+            n=stoi(idM);
+            if(this->getDSMay().check(n))
+            {
+                cout<<"Trung ID! Vui long nhap lai";
+                continue;
+            }
+            flag=1;
+        }
+        qlMay ql=this->getDSMay();
+        May* tempMay;
+        tempMay=nullptr;
+        delete tempMay;
+        tempMay=new May(n);
+        ql.them(tempMay);
+        this->setDSMay(ql);
+        cout<<"Da them may thanh cong."<<endl;
+            cin.get();
+        return;
+    }
+    if(in=="2")
+    {
+        string idM;
+        cout<<"Nhap id may(ID phai <100):";
+        cin>>idM;
+        int flag=0,n;
+        while(!flag)
+        {
+            while(!(t.laSo(idM)&&idM.length()<=2))
+            {
+                cout<<"Vui long nhap lai( ID phai la so va < be hon 100 hoac ID khong hop le):";
+                cin>>idM;
+            }
+            n=stoi(idM);
+            if(this->getDSMay().check(n))continue;
+            flag=1;
+        }
+        qlMay ql=this->getDSMay();
+        May* tempMay;
+        tempMay=new mayVip(n);
+        ql.them(tempMay);
+        this->setDSMay(ql);
+        cout<<"Da them may thanh cong."<<endl;
+        cin.get();
+        return;
+    }
+}
+;
+void qlPhien::timThanhVien(){
+    Tool z;
+    string t;
+    cout<<"Tim kiem theo username: ";
+    getline(cin,t);
+    int ans[100];
+    int cnt=0;
+    t=z.nomalize(t);
+    qlThanhVien a=this->getDS();
+    for (int i=0; i<a.getSL(); i++)
+    {
+        string userTemp=a.getds()[i]->getUsername();
+        userTemp=z.nomalize(userTemp);
+        if(z.subString(userTemp,t))
+        {
+            ans[cnt]=i;
+            cnt++;
+            cout<<cnt<<".";
+            a.getds()[i]->thongTinTaiKhoan();
+        }
+    };
+    if(cnt==0)
+    {
+        cout<<"Khong tim thay thanh vien nao.";
+        cin.get();
+        return;
+    }
+    else
+    {
+        cout<<"Chon thanh vien ban muon xu ly: ";
+        int n;
+        cin>>n;
+        while(n<1||n>cnt)
+        {
+            cout<<"Vui long nhap dung lua chon! Lua chon cua ban:";
+            cin>>n;
+        }
+        int pos=ans[n-1];
+        cout<<"Thanh vien ban chon: ";
+        cout<<a.getds()[pos]->getUsername()<<endl;
+        cout<<"Chon thao tac ban muon xu ly voi thanh vien nay: "<<endl;
+        cout<<"1. Xoa thanh vien."<<endl;
+        cout<<"2. Sua thanh vien."<<endl;
+        cout<<"Lua chon cua ban: ";
+        cin>>n;
+        while (n!=1&&n!=2)
+        {
+            cout<<"Vui long nhap lai thong tin chinh xac! Lua chon cua ban: ";
+            cin>>n;
+        }
+        if(n==1)
+        {
+            string temp=a.getds()[pos]->getUsername();
+            a.xoaThanhVien(pos);
+            this->setDSTV(a);
+        }
+        if(n==2)
+        {
+            a.getds()[pos]->suaThongTin();
+        }
+    }}
+
+void qlPhien::timMay(){
+    Tool t;
+    cout<<"Tim may theo ID: ";
+    string id;
+    getline(cin,id);
+    int ans[100];
+    while (!t.laSo(id)||id.length()>2)
+    {
+        cout<<"Hay nhap lai ID( la so va khong qua 100):";
+        getline(cin,id);
+    }
+    int n=stoi(id);
+    int cnt=0;
+    qlMay s= this->getDSMay();
+    for (int i=0; i<s.getSL(); i++)
+    {
+        int h=s.getDsMay()[i]->getID();
+        if(h==n||(h/10)==n||(h%10)==n)
+        {
+            ans[cnt]=i;
+            cnt++;
+            cout<<cnt<<".";
+            s.getDsMay()[i]->display();
+        }
+    };
+    if(cnt==0)
+    {
+        cout<<"Khong tim duoc may nao";
+        return;
+    }
+    cout<<"Chon may ban muon xu ly: ";
+    cin>>n;
+    while(n<1||n>=cnt)
+    {
+        cout<<"Vui long nhap dung lua chon! Lua chon cua ban: ";
+        cin>>n;
+    }
+    int pos=ans[n-1];
+    cout<<"May ban chon la "<< s.getDsMay()[pos]->info()<<s.getDsMay()[pos]->getID();
+    cout<<"Chon thao tac ban muon xu ly voi may nay: "<<endl;
+    cout<<"1. Xoa may."<<endl;
+    cout<<"2. Sua may."<<endl;
+    cout<<"Lua chon cua ban: ";
+    cin>>n;
+    while (n!=1&&n!=2)
+    {
+        cout<<"Vui long nhap lai thong tin chinh xac! Lua chon cua ban: ";
+        cin>>n;
+    }
+    if(n==1)
+    {
+        s.xoaMay(pos);
+        this->setDSMay(s);
+    }
+    if(n==2)
+    {
+        string ti;
+        int tis;
+        cout<<"Nhap ID may ban muon thay doi cho may (Nhap ID cu de giu nguyen): ";
+        int flag=0;
+        while(!flag)
+        {
+            getline(cin,ti);
+            while(!(t.laSo(ti)&&ti.length()<=2))
+            {
+                cout<<"Vui long nhap lai( ID phai la so va < be hon 100 hoac ID khong hop le): ";
+                getline(cin,ti);
+            }
+            tis=stoi(ti);
+            if(this->getDSMay().check(n)||s.getDsMay()[pos]->getID()==n)
+            {
+                flag=1;
+                break;
+            }
+            cout<<"Trung ID. Vui long nhap lai: ";
+        }
+        s.getDsMay()[pos]->setID(tis);
+        cout<<"Da cap nhat may.";
+        cin.get();
+    }
+}
+void qlPhien::setDSMay(qlMay m){qM=m;};
 
 void qlPhien::display()
 {
@@ -324,5 +564,16 @@ void qlPhien::display()
         qP[i]->display();
         cout<<endl;
     }
+}
+
+int qlPhien::getSL(){return soLuong;}
+void qlPhien::setSL(int sl){soLuong=sl;}
+qlMay qlPhien::getDSMay(){return qM;};
+
+Phien** qlPhien::getDSPhien(){
+return qP;
+}
+void qlPhien::setDSPhien(Phien** qt){
+qP=qt;
 }
 

@@ -37,26 +37,24 @@ void phienTV::tatMay()
 
 void phienTV::tinhTien()
 {
-    int tempSec= difftime(timeTemp,time(0));
+    int tempSec= difftime(time(0),timeTemp);
     timeTemp=time(0);
-    thoiGian+=tempSec;
-    tienChoi+=m->thanhtien()*tempSec*tv->getUudai();
-    tv->setTien(tv->getTien()-m->thanhtien()*tempSec*tv->getUudai());
-    if(tv->getTien()<=0)
-    {
-        int tam= 0-tv->getTien();
-        tv->setTien(0);
-        tv->congThoiGian(tam*3600/m->thanhtien()/tv->getUudai());
-        tatMay();
+    this->thoiGian=thoiGian+tempSec;
+    if(tv!=nullptr){
+    float tempTien= (float)tienChoi+(float)tienChoi+m->thanhtien()*(float)tempSec*tv->getUudai();
+    tienChoi=(int)tempTien;
+    tv->setTien(tv->getTien()-(tienChoi-(int)tempTien));
+        if(tv->getTien()<=0)
+        {
+            tatMay();
+        }
     }
 }
 
 void phienTV::display()
 {
-    time_t ts=time(0);
-    char*t=ctime(&ts);
-    cout<<"Mayid:"<<mayID<<"   So tien:"<<tienChoi<<"       Thoi gian:"<<thoiGian<<"        Trang thai:"<<trangThaiPhien<<endl;
-    cout<<"Thanh Vien:"<<this->gettenTV()<<"           Thoi gian:"<<t;
+    cout<<"Mayid:"<<mayID<<"   So tien:"<<tienChoi<<"       Thoi gian:"<<thoiGian<<"        Trang thai:"<<trangThaiPhien;
+    cout<<"Thanh Vien:"<<this->gettenTV()<<endl;
 
 }
 

@@ -17,7 +17,7 @@ public:
     string getUsername();
     void thongTinTaiKhoan();
     void taoTV();
-    void capNhapVip();
+    void capNhatVip();
     void napTien();
     void suaThongTin();
     float getUudai();

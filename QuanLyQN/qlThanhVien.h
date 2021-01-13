@@ -11,17 +11,17 @@ class qlThanhVien
 public:
     qlThanhVien();
     void themTV(ThanhVien* tv);
-    void nhapTuFile();
-    void xuatraFile();
     void taoThanhVien(ThanhVien* tv);
     void display();
-    int getSL(){return soLuongTV;}
-    void setSL(int sl){soLuongTV=sl;}
+    int getSL();
+    void setSL(int sl);
     ThanhVien** getds();
     void reset();
     void setDSTV(ThanhVien** tv);
     bool check(string user);
     void xoaThanhVien (int pos);
+    void capNhatVip();
+    ThanhVien* searcH(string tentv);
 };
 
 #endif // QLTHANHVIEN_H_INCLUDED

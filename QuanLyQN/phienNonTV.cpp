@@ -35,11 +35,12 @@ int phienNonTV::type()
 };
 
 void phienNonTV::tinhTien(){
-        long long tempSec= difftime(timeTemp,time(0));
+        int tempSec= difftime(time(0),timeTemp);
         timeTemp=time(0);
         thoiGian+=tempSec;
-        tienChoi+=m->thanhtien()*tempSec;
-
+        float tempF=(float)tienChoi*m->thanhtien()*tempSec;
+        tienChoi=(int)tempF;
+        this->setTime(timeTemp);
 }
 void phienNonTV::tatMay()
 {

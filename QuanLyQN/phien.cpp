@@ -57,3 +57,7 @@ void Phien::setTV(ThanhVien* tvien)
 {
     tv=tvien;
 };
+
+void Phien::doiTrangThai(){
+    trangThaiPhien=(trangThaiPhien)?false:true;
+}

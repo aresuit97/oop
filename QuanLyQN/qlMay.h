@@ -13,10 +13,12 @@ public:
     May** getDsMay();
     int getSL(){
     return soLuong;}
-    void setSL(int sl){soLuong=sl;}
+    void setSL(int sl);
     void setDsMay(May** pt);
     void reset();
     void display();
+    bool check(int n);
+    void xoaMay(int pos);
 
 };
 #endif // QLMAY_H_INCLUDED

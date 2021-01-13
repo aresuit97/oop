@@ -62,15 +62,15 @@ int thoiGianChoi,soTien;
 }
 void ThanhVien::thongTinTaiKhoan()
 {
-    cout<<setw(20)<<left<< username<<setw(20)<<left<<ten<<setw(15)<<left<<sdt<<setw(10)<<right<<soTien<<setw(7)<<thoiGianChoi/3600<<":"<<setw(2)<<right<<thoiGianChoi%3600/60;
+    Tool t;
+    cout<<setw(15)<<left<< username<<setw(23)<<left<<ten<<setw(13)<<left<<sdt<<setw(10)<<right<<t.lamtrontien(soTien)<<setw(7)<<right<<thoiGianChoi/3600<<":"<<setw(2)<<right<<thoiGianChoi%3600/60;
     if(uuDai==1)cout<<setw(10)<<right<<"Thuong"<<endl;
-    else cout<<setw(10)<<right<<"VIP"<<endl;
+    if(uuDai!=1) cout<<setw(10)<<right<<"VIP"<<endl;
 }
 
-void ThanhVien::capNhapVip()
+void ThanhVien::capNhatVip()
 {
-    if(thoiGianChoi>1000)uuDai=0.9;
-    if(thoiGianChoi>2000)uuDai=0.8;
+    if(thoiGianChoi>50*3600)uuDai=0.9;
 }
 
 void ThanhVien::napTien()
@@ -95,34 +95,39 @@ void ThanhVien::suaThongTin()
     {
         cout<<"Nhap ten moi: ";
         getline(cin,ten);
+        ten=t.chuanHoa(ten);
     }
     if(i==2)
     {
         cout<<"Nhap SDT moi: ";
-        cin>>sdt;
+        getline(cin,sdt);
+        while(!t.isSDT(sdt)){
+            cout<<"Vui long nhap lai so dien thoai(gom 10 chu so):";
+            getline(cin,sdt);
+        }
     }
     if(i==3){
         cout<<"Nhap mat khau moi:";
         string tempPW;
         getline(cin,tempPW);
-        while(!t.checkKhoangTrang(tempPW)){
-            cout<<"Mat khau khong chua khoang trang! Vui long nhap lai mat khau: "<<endl;
+        while(!t.matkhau(tempPW)){
+            cout<<"Mat khau khong hop le! Vui long nhap lai mat khau: "<<endl;
             cin>>tempPW;
         }
         cout<<"Nhap lai mat khau";
         string tempPW2;
         getline(cin,tempPW2);
-        while(tempPW2!=tempPW||!t.checkKhoangTrang(tempPW2))
+        while(tempPW2!=tempPW)
         {
             cout<<"Mat khau ban nhap khong trung khop. Vui long nhap lai."<<endl;
             cout<<"Nhap mat khau moi: " ;
-            cin >>tempPW;
-            while(!t.checkKhoangTrang(tempPW)){
-            cout<<"Mat khau khong chua khoang trang! Vui long nhap lai mat khau: "<<endl;
-            cin>>tempPW;
-                        }
+             getline(cin,tempPW);
+            while(!t.matkhau(tempPW)){
+            cout<<"Mat khau khong hop le! Vui long nhap lai mat khau: "<<endl;
+             getline(cin,tempPW);
+            }
             cout<<"Nhap lai mat khau: ";
-            cin >>tempPW2;
+             getline(cin,tempPW2);
         }
     }
 }

@@ -7,6 +7,7 @@
 #include "tool.h"
 class Menu{
 public:
+    Menu();
     qlPhien qlP;
     void adminMenu();
     void tvMenu();
@@ -16,6 +17,13 @@ public:
     void quanLiTaiKhoanThanhVien();
     void taoThanhVien();
     void timThanhVien();
+    void quanLiMay();
+    void taoMay();
+    void timMay();
+    void quanliPhien();
+    void moMay();
+    void tatMay();
+    void xemDoanhThu();
 
 
 };

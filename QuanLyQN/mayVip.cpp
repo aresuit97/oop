@@ -1,8 +1,8 @@
 #include "mayVip.h"
 
-int mayVip::thanhtien()
+float mayVip::thanhtien()
 {
-    return giaTienMayVip;
+    float giaTienMayVip;
 };
 string mayVip::info()
 {

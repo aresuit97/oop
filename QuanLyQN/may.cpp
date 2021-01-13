@@ -3,8 +3,8 @@
 string May::info(){
         return "NOR";
     };
-int May::thanhtien(){
-        return giaTienMayThuong;
+float May::thanhtien(){
+        return (float)giaTienMayThuong/3600;
     };
 int May::getID() {return ID;}
 
@@ -27,7 +27,9 @@ May::May()
     };
 
 void May::display(){
-        cout<<"NOR"<<ID<<"  "<<trangThai<<endl;
+        cout<<"NOR"<<ID<<"  ";
+        if(trangThai)cout<<"Dang dung"<<endl;
+        else cout<<"Dang tat"<<endl;
     }
 
 

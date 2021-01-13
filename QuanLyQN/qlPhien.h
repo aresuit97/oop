@@ -13,9 +13,11 @@ public:
     qlPhien();
     void themPhien(phienTV* p);
     void themPhien(phienNonTV* p);
+    void taoMay();
+    void timThanhVien();
     void update();
-    int getSL(){return soLuong;}
-    void setSL(int sl){soLuong=sl;}
+    int getSL();
+    void setSL(int sl);
     long long tongDoanhthu();
     void nhapDSMay();
     void xuatDSMay();
@@ -26,9 +28,13 @@ public:
     void setDSTV(qlThanhVien qt);
     qlThanhVien getDS();
     void themThanhVien();
-    qlMay getDSMay(){return qM;};
-    void setDSMay(qlMay m){qM=m;};
+    qlMay getDSMay();
+    void setDSMay(qlMay m);
     void display();
+    Phien** getDSPhien();
+    void setDSPhien(Phien** s);
+    void timMay();
+
 };
 
 

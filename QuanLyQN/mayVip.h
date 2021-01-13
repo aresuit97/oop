@@ -6,11 +6,13 @@
 class mayVip:public May
 {
 public:
-    int thanhtien();
+    float thanhtien();
     string info();
     mayVip(int n);
     void display(){
-        cout<<"VIP"<<ID<<"  "<<trangThai;
+        cout<<"VIP"<<ID<<"  ";
+        if(trangThai)cout<<"Dang dung"<<endl;
+        else cout<<"Dang tat"<<endl;
     }
 };
 #endif // MAYVIP_H_INCLUDED

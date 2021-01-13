@@ -61,13 +61,11 @@
 		</Unit>
 		<Unit filename="qlThanhVien.cpp" />
 		<Unit filename="qlThanhVien.h" />
-		<Unit filename="quanLy.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="thanhVien.cpp" />
 		<Unit filename="thanhVien.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="tool.cpp" />
 		<Unit filename="tool.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
