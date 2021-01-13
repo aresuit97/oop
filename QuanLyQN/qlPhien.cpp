@@ -8,6 +8,52 @@ qlPhien::qlPhien()
     qTV.reset();
 }
 
+void qlPhien::themPhien(Phien* p)
+{
+    if(soLuong==0)
+    {
+        soLuong=1;
+        qP=new Phien*[1];
+        qP[0]=p;
+    }
+    else
+    {
+        Phien** temp=new Phien*[soLuong+1];
+        for (int i=0; i<soLuong; i++)
+        {
+            temp[i]=qP[i];
+        }
+        temp[soLuong]=p;
+        delete[] qP;
+
+        qP=temp;
+        soLuong++;
+    }
+}
+
+void  qlPhien::searchTvMay(int mayID)
+{
+    for (int i=0; i<soLuong; i++)
+    {
+        if(qP[i]->getId()==mayID&&qP[i]->getTrangThai()&&qP[i]->type()==1)
+        {
+            cout<<setw(28)<<right<<qP[i]->gettenTV();
+        }
+    }
+
+}
+void qlPhien::displayDSMay()
+{
+    qlMay ql=this->getDSMay();
+    for (int i=0; i<ql.getSL(); i++)
+    {
+        ql.getDsMay()[i]->display();
+        this->searchTvMay(ql.getDsMay()[i]->getID());
+        cout<<endl;
+    }
+}
+
+
 void qlPhien::themPhien(phienTV* p)
 {
     if(soLuong==0)
@@ -81,7 +127,8 @@ void qlPhien::update()
             {
                 string t=qP[i]->gettenTV();
                 qP[i]->setTV(this->getDS().searcH(t));
-                if(qP[i]->getTV()==nullptr){
+                if(qP[i]->getTV()==nullptr)
+                {
                     qP[i]->doiTrangThai();
                 }
             }
@@ -93,7 +140,22 @@ void qlPhien::update()
         qP[i]->setTime(temp);
     }
 }
-
+void qlPhien::hienPhienOnl()
+{
+    cout<<"Cac phien dang hoat dong: "<<endl;
+    cout<<endl;
+    cout<<"-----------------------------------------------------------------------------------------"<<endl;
+    cout<<"| May    | So tien       | Thoi gian         |        Trang thai|             Thanh vien|"<<endl;
+    cout<<"-----------------------------------------------------------------------------------------"<<endl;
+    for (int i=0; i<soLuong; i++)
+    {
+        if(this->getDSPhien()[i]->getTrangThai())
+        {
+            this->getDSPhien()[i]->display();
+            cout<<endl;
+        }
+    }
+};
 long long qlPhien::tongDoanhthu()
 {
     long long sum =0;
@@ -166,31 +228,31 @@ void qlPhien::nhapDSTV()
     qTV.reset();
     while(!fi.eof())
     {
-            string temp;
-            ThanhVien* tempTV=new ThanhVien();
-            fi>>temp;
-            fi.ignore();
-            tempTV->setUsername(temp);
-            fi>>temp;
-            fi.ignore();
-            tempTV->setPW(temp);
-            getline(fi,temp);
-            tempTV->setTen(temp);
-            fi>>temp;
-            fi.ignore();
-            tempTV->setSDT(temp);
-            int tempI;
-            fi>>tempI;
-            fi.ignore();
-            tempTV->setTien(tempI);
-            float uuDai;
-            fi>>uuDai;
-            fi.ignore();
-            tempTV->setUuDai(uuDai);
-            fi>>tempI;
-            tempTV->setThoiGianChoi(tempI);;
-            qTV.themTV(tempTV);
-            tempTV=nullptr;
+        string temp;
+        ThanhVien* tempTV=new ThanhVien();
+        fi>>temp;
+        fi.ignore();
+        tempTV->setUsername(temp);
+        fi>>temp;
+        fi.ignore();
+        tempTV->setPW(temp);
+        getline(fi,temp);
+        tempTV->setTen(temp);
+        fi>>temp;
+        fi.ignore();
+        tempTV->setSDT(temp);
+        int tempI;
+        fi>>tempI;
+        fi.ignore();
+        tempTV->setTien(tempI);
+        float uuDai;
+        fi>>uuDai;
+        fi.ignore();
+        tempTV->setUuDai(uuDai);
+        fi>>tempI;
+        tempTV->setThoiGianChoi(tempI);;
+        qTV.themTV(tempTV);
+        tempTV=nullptr;
     }
     qTV.capNhatVip();
     fi.close();
@@ -241,13 +303,15 @@ void qlPhien::nhapDSPhien()
         bool b;
         fi>>b;
         tempP->setTrangThai(b);
+        tempP->setTime(time(0));
         if(soLuong==0)
         {
             soLuong=1;
             qP=new Phien*[1];
             qP[0]=tempP;
-             if(qP[0]->type()==1){
-            qP[0]->setUsername(tempS);
+            if(qP[0]->type()==1)
+            {
+                qP[0]->setUsername(tempS);
             }
         }
         else
@@ -258,8 +322,9 @@ void qlPhien::nhapDSPhien()
                 temp[i]=qP[i];
             }
             temp[soLuong]=tempP;
-            if(temp[soLuong]->type()==1){
-            temp[soLuong]->setUsername(tempS);
+            if(temp[soLuong]->type()==1)
+            {
+                temp[soLuong]->setUsername(tempS);
             }
             qP=nullptr;
             delete[] qP;
@@ -335,10 +400,11 @@ void qlPhien::themThanhVien()
     qlThanhVien tv=this->getDS();
     tv.themTV(temp);
     this->setDSTV(tv);
-    cout<<"Da tao thanh vien moi."<<endl;
+
 }
 
-void qlPhien::taoMay(){
+void qlPhien::taoMay()
+{
     Tool t;
     cout<<"Ban muon tao them loai may: "<<endl;
     cout<<"1. May thuong."<<endl;
@@ -381,7 +447,7 @@ void qlPhien::taoMay(){
         ql.them(tempMay);
         this->setDSMay(ql);
         cout<<"Da them may thanh cong."<<endl;
-            cin.get();
+        cin.get();
         return;
     }
     if(in=="2")
@@ -412,7 +478,8 @@ void qlPhien::taoMay(){
     }
 }
 ;
-void qlPhien::timThanhVien(){
+void qlPhien::timThanhVien()
+{
     Tool z;
     string t;
     cout<<"Tim kiem theo username: ";
@@ -472,9 +539,11 @@ void qlPhien::timThanhVien(){
         {
             a.getds()[pos]->suaThongTin();
         }
-    }}
+    }
+}
 
-void qlPhien::timMay(){
+void qlPhien::timMay()
+{
     Tool t;
     cout<<"Tim may theo ID: ";
     string id;
@@ -497,6 +566,7 @@ void qlPhien::timMay(){
             cnt++;
             cout<<cnt<<".";
             s.getDsMay()[i]->display();
+            cout<<endl;
         }
     };
     if(cnt==0)
@@ -506,13 +576,14 @@ void qlPhien::timMay(){
     }
     cout<<"Chon may ban muon xu ly: ";
     cin>>n;
-    while(n<1||n>=cnt)
+    while(n<0||n>cnt)
     {
+        if(n==0)return;
         cout<<"Vui long nhap dung lua chon! Lua chon cua ban: ";
         cin>>n;
     }
     int pos=ans[n-1];
-    cout<<"May ban chon la "<< s.getDsMay()[pos]->info()<<s.getDsMay()[pos]->getID();
+    cout<<"May ban chon la "<< s.getDsMay()[pos]->info()<<s.getDsMay()[pos]->getID()<<endl;
     cout<<"Chon thao tac ban muon xu ly voi may nay: "<<endl;
     cout<<"1. Xoa may."<<endl;
     cout<<"2. Sua may."<<endl;
@@ -555,10 +626,16 @@ void qlPhien::timMay(){
         cin.get();
     }
 }
-void qlPhien::setDSMay(qlMay m){qM=m;};
+void qlPhien::setDSMay(qlMay m)
+{
+    qM=m;
+};
 
 void qlPhien::display()
 {
+    cout<<"-----------------------------------------------------------------------------------------"<<endl;
+    cout<<"| May    | So tien       | Thoi gian         |        Trang thai|             Thanh vien|"<<endl;
+    cout<<"-----------------------------------------------------------------------------------------"<<endl;
     for (int i=0; i<soLuong; i++)
     {
         qP[i]->display();
@@ -566,14 +643,25 @@ void qlPhien::display()
     }
 }
 
-int qlPhien::getSL(){return soLuong;}
-void qlPhien::setSL(int sl){soLuong=sl;}
-qlMay qlPhien::getDSMay(){return qM;};
-
-Phien** qlPhien::getDSPhien(){
-return qP;
+int qlPhien::getSL()
+{
+    return soLuong;
 }
-void qlPhien::setDSPhien(Phien** qt){
-qP=qt;
+void qlPhien::setSL(int sl)
+{
+    soLuong=sl;
+}
+qlMay qlPhien::getDSMay()
+{
+    return qM;
+};
+
+Phien** qlPhien::getDSPhien()
+{
+    return qP;
+}
+void qlPhien::setDSPhien(Phien** qt)
+{
+    qP=qt;
 }
 

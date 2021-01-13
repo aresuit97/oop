@@ -6,8 +6,6 @@
 class phienTV:public Phien
 {
 
-    ThanhVien* tv;
-    string tenTV;
 public:
     int type();
     PhienTV();
@@ -15,8 +13,6 @@ public:
     void tinhTien();
     void display();
     PhienTV(int mayid,string tentv,int thoiGian,int soTien,bool trangthai);
-
-
 };
 
 #endif // PHIENTV_H_INCLUDED

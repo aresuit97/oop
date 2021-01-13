@@ -34,36 +34,46 @@ qlMay::qlMay()
     soLuong=0;
     qMay=nullptr;
 }
-void qlMay::setSL(int sl){soLuong=sl;}
+void qlMay::setSL(int sl)
+{
+    soLuong=sl;
+}
 
 void qlMay::setDsMay(May** pt)
 {
     qMay=pt;
 }
 
-void qlMay::reset(){
+void qlMay::reset()
+{
     soLuong=0;
     if(qMay!=nullptr)delete[] qMay;
-    }
-
-void qlMay::display(){
-    for (int i=0;i<soLuong;i++){
-        qMay[i]->display();
-    }
 }
-bool qlMay::check(int n){
-    for (int i=0;i<soLuong;i++){
+
+//void qlMay::display(){
+//    for (int i=0;i<soLuong;i++){
+//        qMay[i]->display();
+//
+//    }
+//}
+bool qlMay::check(int n)
+{
+    for (int i=0; i<soLuong; i++)
+    {
         if(n==qMay[i]->getID())return true;
     }
     return false;
 }
 
-void qlMay::xoaMay(int pos){
+void qlMay::xoaMay(int pos)
+{
     May** tM=new May*[soLuong-1];
-    for (int i=0;i<pos;i++){
+    for (int i=0; i<pos; i++)
+    {
         tM[i]=qMay[i];
     }
-    for (int i=pos;i<soLuong-1;i++){
+    for (int i=pos; i<soLuong-1; i++)
+    {
         tM[i]=qMay[i+1];
     }
     delete[] qMay;

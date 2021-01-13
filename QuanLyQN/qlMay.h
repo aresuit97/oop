@@ -11,8 +11,10 @@ public:
     qlMay();
     void them(May* m);
     May** getDsMay();
-    int getSL(){
-    return soLuong;}
+    int getSL()
+    {
+        return soLuong;
+    }
     void setSL(int sl);
     void setDsMay(May** pt);
     void reset();

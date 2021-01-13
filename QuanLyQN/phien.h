@@ -25,18 +25,16 @@ public:
     void setMay(May* m);
     int  getThoiGian();
     void setThoiGian(int tg);
-    int getTienChoi(){
-    return tienChoi;};
-    void setTienChoi(int tien){tienChoi=tien;};
+    int getTienChoi();
+    void setTienChoi(int tien);
     bool getTrangThai();
     int getId();
     string gettenTV();
-    time_t getTime(){return timeTemp;};
+    time_t getTime();
     void setTime(time_t time);
     void  setID(int id);
     void setUsername(string tenTV);
     void setTrangThai(bool b);
-
     virtual void display()=0;
     ThanhVien* getTV();
     void setTV(ThanhVien* tvien);

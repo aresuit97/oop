@@ -58,6 +58,21 @@ void Phien::setTV(ThanhVien* tvien)
     tv=tvien;
 };
 
-void Phien::doiTrangThai(){
+void Phien::doiTrangThai()
+{
     trangThaiPhien=(trangThaiPhien)?false:true;
 }
+
+int Phien::getTienChoi()
+{
+    return tienChoi;
+};
+void Phien::setTienChoi(int tien)
+{
+    tienChoi=tien;
+};
+time_t Phien::getTime()
+{
+    return timeTemp;
+};
+

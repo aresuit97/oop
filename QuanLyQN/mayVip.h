@@ -9,10 +9,6 @@ public:
     float thanhtien();
     string info();
     mayVip(int n);
-    void display(){
-        cout<<"VIP"<<ID<<"  ";
-        if(trangThai)cout<<"Dang dung"<<endl;
-        else cout<<"Dang tat"<<endl;
-    }
+    void display();
 };
 #endif // MAYVIP_H_INCLUDED

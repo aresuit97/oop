@@ -4,7 +4,8 @@
 #include "phienNonTV.h"
 #include <fstream>
 #include <istream>
-class qlPhien{
+class qlPhien
+{
     Phien** qP;
     int soLuong;
     qlMay qM;
@@ -13,9 +14,12 @@ public:
     qlPhien();
     void themPhien(phienTV* p);
     void themPhien(phienNonTV* p);
+    void displayDSMay();
+    void searchTvMay(int n);
     void taoMay();
     void timThanhVien();
     void update();
+    void hienPhienOnl();
     int getSL();
     void setSL(int sl);
     long long tongDoanhthu();
@@ -34,6 +38,7 @@ public:
     Phien** getDSPhien();
     void setDSPhien(Phien** s);
     void timMay();
+    void themPhien(Phien* p);
 
 };
 

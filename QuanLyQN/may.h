@@ -21,10 +21,7 @@ public:
     May(int n);
     May();
     virtual void display();
-
     bool getTrangThai();
-
-
 };
 
 

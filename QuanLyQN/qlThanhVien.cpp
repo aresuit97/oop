@@ -8,11 +8,10 @@ qlThanhVien::qlThanhVien()
 
 void qlThanhVien:: display()
 {
-    cout<<setfill('-');
-    cout<<setw(81)<<""<<endl;
-    cout<<"Username       Ten thanh vien                SDT      So Tien  Thoi gian  Loai TV"<<endl;
-    cout<<setw(81)<<""<<endl;
-    cout<<setfill(' ');
+
+    cout<<"-----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"| Username       |Ten thanh vien               |SDT           |So Tien      | Thoi gian   |  Loai TV|"<<endl;
+    cout<<"-----------------------------------------------------------------------------------------------------"<<endl;
     for(int i=0; i<soLuongTV; i++)
     {
         tv[i]->thongTinTaiKhoan();
@@ -22,9 +21,12 @@ void qlThanhVien:: display()
     cout << endl;
 }
 
-ThanhVien* qlThanhVien::searcH(string a){
-    for (int i=0;i<soLuongTV;i++){
-        if(a==this->getds()[i]->getUsername()){
+ThanhVien* qlThanhVien::searcH(string a)
+{
+    for (int i=0; i<soLuongTV; i++)
+    {
+        if(a==this->getds()[i]->getUsername())
+        {
             return this->getds()[i];
         }
     }
@@ -57,10 +59,12 @@ void qlThanhVien::themTV(ThanhVien* tvien )
         soLuongTV++;
     }
 }
-void qlThanhVien::capNhatVip(){
-        for (int i=0;i<soLuongTV;i++){
-            tv[i]->capNhatVip();
-        }
+void qlThanhVien::capNhatVip()
+{
+    for (int i=0; i<soLuongTV; i++)
+    {
+        tv[i]->capNhatVip();
+    }
 }
 
 void qlThanhVien::reset()

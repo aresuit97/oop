@@ -12,7 +12,11 @@ public:
     void tinhTien();
     void display();
     phienNonTV(May* may);
-    phienNonTV(int id){mayID=id;trangThaiPhien=1;};
+    phienNonTV(int id)
+    {
+        mayID=id;
+        trangThaiPhien=1;
+    };
     phienNonTV(int mayid,int thoigian,int tienchoi,bool trangthai);
     ~phienNonTV();
 

@@ -5,10 +5,11 @@
 #include <iomanip>
 #include "qlPhien.h"
 #include "tool.h"
-class Menu{
+class Menu
+{
+    qlPhien qlP;
 public:
     Menu();
-    qlPhien qlP;
     void adminMenu();
     void tvMenu();
     void phienMenu();

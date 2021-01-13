@@ -16,9 +16,7 @@ public:
     ThanhVien(string username,string pw,string ten,string sdt,int soTien,int thoiGianChoi,float uuDai);
     string getUsername();
     void thongTinTaiKhoan();
-    void taoTV();
     void capNhatVip();
-    void napTien();
     void suaThongTin();
     float getUudai();
     int getTien();
@@ -30,7 +28,7 @@ public:
     int getThoiGianChoi();
     void setUsername(string temp);
     void setPW(string temp);
-    void  setTen(string temp);
+    void setTen(string temp);
     void setSDT(string temp);
     void setThoiGianChoi(int  thoiGian);
     void setUuDai(float uuDai);

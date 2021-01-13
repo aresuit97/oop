@@ -2,210 +2,127 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+	<File name="may.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="198" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="phienNonTV.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="387" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="13" />
-			<Collapse line="24" />
-			<Collapse line="36" />
-		</Folding>
-	</File>
-	<File name="qlThanhVien.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="253" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="phienTV.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1331" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="6" />
-			<Collapse line="15" />
-			<Collapse line="25" />
-			<Collapse line="38" />
-			<Collapse line="54" />
-		</Folding>
-	</File>
-	<File name="thanhVien.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3277" topLine="27" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="9" />
-			<Collapse line="21" />
-			<Collapse line="31" />
-			<Collapse line="63" />
-			<Collapse line="70" />
-			<Collapse line="76" />
-			<Collapse line="84" />
-			<Collapse line="135" />
-			<Collapse line="139" />
-			<Collapse line="143" />
-			<Collapse line="147" />
-			<Collapse line="151" />
-			<Collapse line="155" />
-			<Collapse line="159" />
-			<Collapse line="163" />
-			<Collapse line="167" />
-			<Collapse line="172" />
-			<Collapse line="177" />
-			<Collapse line="181" />
-			<Collapse line="186" />
-			<Collapse line="190" />
-		</Folding>
-	</File>
-	<File name="qlThanhVien.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="mayVip.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="248" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="qlMay.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="261" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="phien.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="506" topLine="12" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="7" />
-			<Collapse line="11" />
-			<Collapse line="15" />
-			<Collapse line="20" />
-		</Folding>
-	</File>
-	<File name="may.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="433" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="qlMay.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="455" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="39" />
-		</Folding>
-	</File>
-	<File name="phien.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="98" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="phienNonTV.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="113" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="menu.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="12787" topLine="32" />
-		</Cursor>
-		<Folding>
-			<Collapse line="4" />
-			<Collapse line="66" />
-			<Collapse line="90" />
-			<Collapse line="149" />
-			<Collapse line="227" />
-			<Collapse line="257" />
-			<Collapse line="340" />
-			<Collapse line="373" />
-			<Collapse line="413" />
-		</Folding>
-	</File>
-	<File name="tool.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="388" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="thanhVien.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="624" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="tool.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1391" topLine="6" />
+			<Cursor1 position="335" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="phienTV.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="123" topLine="0" />
+			<Cursor1 position="349" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="qlPhien.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="menu.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="7318" topLine="19" />
+			<Cursor1 position="1032" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="phienTV.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="7" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="tool.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="446" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="phien.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="294" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="may.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="480" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="phienNonTV.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="486" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="qlThanhVien.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="490" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="mayVip.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="243" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="qlMay.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="397" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="qlPhien.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13932" topLine="366" />
 		</Cursor>
 		<Folding>
-			<Collapse line="3" />
-			<Collapse line="11" />
-			<Collapse line="34" />
-			<Collapse line="57" />
-			<Collapse line="90" />
-			<Collapse line="100" />
-			<Collapse line="112" />
-			<Collapse line="139" />
-			<Collapse line="156" />
-			<Collapse line="192" />
-			<Collapse line="207" />
-			<Collapse line="267" />
-			<Collapse line="272" />
-			<Collapse line="277" />
-			<Collapse line="321" />
+			<Collapse line="143" />
+			<Collapse line="208" />
+			<Collapse line="225" />
+			<Collapse line="261" />
+			<Collapse line="276" />
+			<Collapse line="406" />
 		</Folding>
+	</File>
+	<File name="phienNonTV.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="163" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="qlThanhVien.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="580" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="menu.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="506" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="thanhVien.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="973" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="phien.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="qlPhien.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="9" />
+		</Cursor>
 	</File>
 	<File name="mayVip.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="187" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="7" />
-			<Collapse line="11" />
-		</Folding>
-	</File>
-	<File name="menu.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="491" topLine="0" />
+			<Cursor1 position="396" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="qlPhien.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="thanhVien.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="696" topLine="0" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="may.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="qlMay.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="348" topLine="0" />
+			<Cursor1 position="400" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="2" />
-			<Collapse line="5" />
-			<Collapse line="10" />
-			<Collapse line="14" />
-			<Collapse line="18" />
-			<Collapse line="23" />
-			<Collapse line="28" />
-			<Collapse line="35" />
-		</Folding>
+	</File>
+	<File name="tool.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="409" topLine="0" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
